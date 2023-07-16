@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My App</title>
+</head>
+<body>
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <input type="text" name="productName" id="productName" placeholder="Enter Product Name" #name/>
+    <input type="number" name="quantity" id="quantity" placeholder="Enter Quantity" #quantity/>
+    <button class="hero-btn" (click)="addItems(name.value, quantity.value)">Add Item</button>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let item of list">
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td><button (click)="remove(item.id)">Remove</button></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
